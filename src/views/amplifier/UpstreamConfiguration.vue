@@ -1,5 +1,6 @@
 <template>
-    <div>      
+  <ion-page>
+    <ion-content class="ion-padding main-content">
         <div class="card auto">      
             <h5 class="cardtitle">Input Attenuation</h5>
             <SpinControl />
@@ -54,7 +55,8 @@
                 </ion-segment>
             </div>            
         </div>
-    </div>  
+    </ion-content>        
+    </ion-page>  
   </template>
   
   <script>

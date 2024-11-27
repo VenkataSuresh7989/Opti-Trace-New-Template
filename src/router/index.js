@@ -1,13 +1,11 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import Login from '../components/Login.vue';
-import Dashboard from "../views/Dashboard.vue";
+import Login from '../components/LoginScreen.vue';
 import amplifierRouter from './amplifierRouter';
 import { genDateTimeID } from '../assets/script/common';
 
 const routes = [
-  { path: '/', redirect: '/dashboard' },
+  { path: '/', redirect: '/login' },
   { path: '/login', name: 'Login', component: Login },
-  { path: `/dashboard`, name: "Home", component: Dashboard },
   ...amplifierRouter
 ];
 
@@ -15,13 +13,6 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes
 });
-
-// router.beforeEach((to, from, next) => {
-//   to.params.randomNumber = genDateTimeID();
-//   from.params.randomNumber = genDateTimeID();
-//   next();
-// });
-
 
 router.beforeEach((to, from, next) => {
   const isLoggedIn = localStorage.getItem("isLogin");

@@ -1,5 +1,6 @@
 <template>
-    <div>      
+    <ion-page>
+        <ion-content class="ion-padding main-content">
         <div class="card auto">      
             <h5 class="cardtitle center">Manual Mode Active</h5>
             <div class="checkboxgroup">
@@ -11,8 +12,11 @@
                     <ion-label>AGC</ion-label>
                     <ion-checkbox @click="btnChkbox('manual',$event)"  v-model="isManualChecked" mode="md"></ion-checkbox>                
                 </ion-item> -->
-                <ion-checkbox @click="btnChkbox('manual',$event)"  v-model="isManualChecked" mode="md"><span>Manual</span></ion-checkbox> 
-                <ion-checkbox @click="btnChkbox('manual',$event)"  v-model="isManualChecked" mode="md"><span>AGC</span></ion-checkbox> 
+                <!-- v-model="isManualChecked" -->
+                <!-- @click="btnChkbox('manual',$event)" -->
+                <ion-checkbox  mode="md"><span>Manual</span></ion-checkbox> 
+                <!-- v-model="isManualChecked" -->
+                <ion-checkbox  mode="md"><span>AGC</span></ion-checkbox> 
             </div>
         </div>
         <div class="card auto">
@@ -117,10 +121,9 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
-
-    </div>  
+    </ion-content>    
+</ion-page>  
   </template>
   
   <script>

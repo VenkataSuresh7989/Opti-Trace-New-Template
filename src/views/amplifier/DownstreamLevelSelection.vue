@@ -1,24 +1,25 @@
 <template>  
+<ion-page>
+  <ion-content class="ion-padding main-content">
     <div class="card auto">
         <h5 class="cardtitle">Downstream Levels</h5>  
         <div class="customradio full">
-            <ion-radio-group value="trunk">                             
-                <ion-radio value="trunk">Trunk</ion-radio>                
+            <ion-radio-group value="trunk">                                             
+                <ion-radio value="standard">Standard</ion-radio>        
+                <ion-radio value="trunk">Trunk</ion-radio>        
             </ion-radio-group>
-        </div> 
-        <h5 class="cardtitle">Trunking pad Value</h5>    
-        <SpinControl />
-        <SpinControl />
-        
+        </div>         
         <div class="setBtn center">
             <ion-button class="btnprimary" mode="ios"><span> Set</span></ion-button>
         </div> 
     </div>  
+  </ion-content>
+  </ion-page>
   </template>
   
   <script>
   import { useRouter } from "vue-router";     
-  import SpinControl from "../../components/SpinControl.vue";
+  import eventBus from '../../assets/script/eventBus';   
   export default {
     name: "DownstreamLevelSelection",   
     data(){
@@ -31,10 +32,14 @@
         router,
       };
     },
-    components:{
-        SpinControl
-    }
-    
+    mounted() {
+      eventBus().emitter.on("evtbackDownstreamLevelSelection",()=>{
+        this.$router.push("../amplifier/trunkleveldetailview");
+      });
+    },
+    unmounted() {
+      eventBus().emitter.off("evtbackDownstreamLevelSelection");
+    },
   };
   </script>
   

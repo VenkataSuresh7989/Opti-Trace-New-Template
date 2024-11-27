@@ -1,6 +1,6 @@
 <template>
     <ion-page>
-      <div class="wrapper">
+        <div class="wrapper">
         <div class="toparea">
             <h3 class="heading welcome">Welcome</h3>
         </div>        
@@ -18,7 +18,7 @@
             <ion-button mode="ios" class="btnprimary">Get Started</ion-button>
         </div>
       </div>
-    </ion-page>  
+    </ion-page>
   </template>
   
   <script>
@@ -34,3 +34,4 @@
     },
   }
   </script>
+  

@@ -1,9 +1,11 @@
-<template>
-    <div>
+### Base component:
+<template>  
+     <ion-page>
+      <ion-content class="ion-padding main-content">
       <div class="alarmstatus">
         <ion-label class="error"><span v-html="$store.state.checkcircle"></span> <span>Status</span></ion-label>
       </div>
-      <div class="card auto">        
+      <div class="card">        
         <ion-list mode="ios" class="alarms">
        
             <ion-row>
@@ -122,26 +124,26 @@
             </ion-row>
          
         </ion-list>
-      </div>
-    </div>  
-  </template>
-  
-  <script>
-  import { useRouter } from "vue-router";
-  
-  export default {
-    name: "HealthStatus",
-    data(){
-        return{
-          togglechk:false,
-        }        
-      },
-    setup() {
-      const router = useRouter();
-      return {        
-        router,
-      };
-    },
-  };
-  </script>
-  
+      </div>    
+  </ion-content>
+  </ion-page>
+</template>
+
+<script>
+import { useRouter } from 'vue-router';
+
+export default {
+  name: "HealhStatus",
+  data(){
+    return{
+      togglechk : false
+    }
+  },
+  setup() {
+    const router = useRouter();
+    return {
+      router,
+    };
+  },
+}
+</script>

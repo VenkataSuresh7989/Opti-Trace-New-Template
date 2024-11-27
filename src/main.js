@@ -8,18 +8,17 @@ import { IonicVue } from '@ionic/vue';
 import '@ionic/vue/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-// import '@ionic/vue/css/normalize.css';
-// import '@ionic/vue/css/structure.css';
+import '@ionic/vue/css/normalize.css';
+import '@ionic/vue/css/structure.css';
 import '@ionic/vue/css/typography.css';
 
 /* Optional CSS utils that can be commented out */
 import '@ionic/vue/css/padding.css';
-// import '@ionic/vue/css/float-elements.css';
-// import '@ionic/vue/css/text-alignment.css';
-// import '@ionic/vue/css/text-transformation.css';
+import '@ionic/vue/css/float-elements.css';
+import '@ionic/vue/css/text-alignment.css';
+import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
-// import '@ionic/vue/css/display.css';
-// require('default-passive-events');
+import '@ionic/vue/css/display.css';
 
 /* Ionic Dark Mode */
 import '@ionic/vue/css/palettes/dark.system.css';
@@ -30,13 +29,15 @@ import './theme/variables.css';
 /* Store */
 import store from '../src/store';
 
+/* Custom CSS */
+import './assets/css/styles.css';
+
 /* Ionic Components */
 import {
   IonApp,
-  IonIcon,
+  IonText,
   IonCheckbox,
   IonPage,
-  IonText,
   IonHeader, 
   IonContent, 
   IonInput,
@@ -78,7 +79,7 @@ import {
   IonCard,
   IonFab,
   IonFabList,
-  IonFabButton  
+  IonFabButton
 } 
 from "@ionic/vue";
 
@@ -87,7 +88,6 @@ const app = createApp(App)
   .use(router)
   .use(store)
   .component("IonApp", IonApp)
-  .component("IonIcon", IonIcon)
   .component("IonText", IonText)
   .component("IonCheckbox", IonCheckbox)
   .component("IonPage", IonPage)
@@ -132,7 +132,7 @@ const app = createApp(App)
   .component("IonCard", IonCard)
   .component("IonFab", IonFab)  
   .component("IonFabList", IonFabList)  
-  .component("IonFabButton", IonFabButton)
+  .component("IonFabButton", IonFabButton);
 
 router.isReady().then(() => {
   app.mount('#app');

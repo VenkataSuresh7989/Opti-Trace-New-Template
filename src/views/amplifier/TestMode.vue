@@ -1,4 +1,6 @@
 <template>  
+<ion-page>
+  <ion-content class="ion-padding main-content">
     <div class="middlearea">
      <div class="card">
         <h5 class="cardtitle">Mode Selection</h5>
@@ -12,12 +14,13 @@
             </ion-col>
         </ion-row>
       </div>
-    </div>  
+    </div> 
+  </ion-content> 
+  </ion-page>
   </template>
   
   <script>
-  import { useRouter } from "vue-router";   
-  import { ref } from 'vue';  
+  import { useRouter } from "vue-router";     
   export default {
     name: "TestMode",   
     data(){

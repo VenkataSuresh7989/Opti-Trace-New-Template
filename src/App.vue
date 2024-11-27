@@ -1,33 +1,33 @@
 <template>
-  <ion-app v-if="isLogin" class="wrapper">
+  <ion-app v-if="isLogin">
     <WelcomeScreen v-show="isWelcome"  />
     <ConnectionType v-show="isConType" />
-    <LoginScreen v-show="isLoginScreen" />
+    <Login v-show="isLoginScreen" />
   </ion-app>
-  <ion-app v-else>
+  <ion-app v-else >
     <!-- Side Menu -->
     <Sidemenu />
 
     <!-- Header Content -->
-    <Header />
+    <HeaderView />
 
     <!-- Main Content -->
-    <ion-content id="main-content" :fullscreen="true" class="wrapper">      
-        <ion-router-outlet :animated="false" />      
+    <ion-content id="main-content">
+      <ion-router-outlet :animated="false" />
     </ion-content>
+
     <!-- Footer -->
-    <Footer />
+    <FooterView />
   </ion-app>
 </template>
 
 <script>
-import "./assets/css/styles.css";
-import ConnectionType from "./components/ConnectionType.vue";
 import WelcomeScreen from "./components/WelcomeScreen.vue";
-import LoginScreen from "./components/LoginScreen.vue";
-import Sidemenu from "./components/Sidemenu.vue";
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+import ConnectionType from "./components/ConnectionType.vue";
+import Login from "./components/LoginScreen.vue";
+import Sidemenu from "./components/SideMenu.vue";
+import HeaderView from "./components/HeaderView.vue";
+import FooterView from "./components/FooterView.vue";
 import eventBus from "./assets/script/eventBus";
 import { useRouter } from "vue-router";
 
@@ -41,12 +41,12 @@ export default {
     };
   },
   components: {
-    WelcomeScreen,
-    ConnectionType,
-    LoginScreen,
+    Login,
     Sidemenu,
-    Header,
-    Footer,
+    HeaderView,
+    FooterView,
+    WelcomeScreen,
+    ConnectionType
   },
   setup() {
     const router = useRouter();
@@ -66,8 +66,10 @@ export default {
       this.isConType = true;
     }, 3000);
   },
-  mounted() {
+  mounted() {    
     eventBus().emitter.on("evtconnectiontype",()=>{
+      console.log("Test");
+      
       this.isConType = false;
       this.isLoginScreen = true;
     });
@@ -75,9 +77,10 @@ export default {
       this.isLoginScreen = false;
       this.isConType =  true;
     });
+
   },
   unmounted() {
-    eventBus().emitter.off("evtconnectiontype");
+    // eventBus().emitter.off("evtconnectiontype");
     eventBus().emitter.off("evtbtnback");
   }
 };

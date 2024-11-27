@@ -1,8 +1,10 @@
 <template>
+  <ion-page>
+    <ion-content class="ion-padding main-content">
     <div class="middlearea">
      <div class="card">
         <ion-list class="devicelist menu" mode="ios">
-          <ion-item>
+          <ion-item @click="navingresscontrolswitch">
             <ion-label>
               <div>
                 <span class="device-icon" v-html="$store.state.switch"></span>
@@ -13,7 +15,9 @@
           </ion-item>
         </ion-list>
       </div>
-    </div>  
+    </div>
+  </ion-content>
+  </ion-page>  
   </template>
   
   <script>
@@ -32,6 +36,11 @@
         router,
       };
     },
+    methods:{
+      navingresscontrolswitch : function(){
+        this.$router.push("../amplifier/ingresscontrolswitch");      
+      }
+    }
   };
   </script>
   

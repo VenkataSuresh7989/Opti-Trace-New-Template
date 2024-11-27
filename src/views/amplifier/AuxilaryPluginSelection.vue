@@ -1,4 +1,6 @@
 <template>  
+<ion-page>
+  <ion-content class="ion-padding main-content">
     <div class="card auto">
         <h5 class="cardtitle">Select Auxilary Plug-in</h5>
 
@@ -12,12 +14,15 @@
             </ion-radio-group>
         </div>      
     </div>  
+    </ion-content>
+    </ion-page>
   </template>
   
   <script>
   import { useRouter } from "vue-router";     
+  import eventBus from '../../assets/script/eventBus';
   export default {
-    name: "AuxilaryPluginSelection",   
+    name: "PortDefinition",   
     data(){
         return{             
         }        
@@ -27,6 +32,14 @@
       return {       
         router,
       };
+    },
+    mounted() {
+      eventBus().emitter.on("evtbackAuxilaryPluginSelection",()=>{
+        this.$router.push("../amplifier/portdefinition");
+      });
+    },
+    unmounted() {
+      eventBus().emitter.off("evtbackAuxilaryPluginSelection");
     },
     
   };

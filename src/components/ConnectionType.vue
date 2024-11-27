@@ -1,10 +1,11 @@
+
 <template>
     <ion-page>
-      <div class="wrapper">
+        <div class="wrapper">
         <div class="toparea">
             <h3 class="heading">Connection Type <span>Select Wi-Fi or Bluetooth</span></h3>
         </div>        
-        <div class="middlearea" style="height: calc(100vh - 150px);">
+        <div class="middlearea" style="height: calc(100vh - 98px);">
             <div class="card center about">
                 <ion-segment value="default" mode="ios" class="sm">
                     <ion-segment-button value="default" mode="ios">
@@ -43,19 +44,19 @@
                         </div>
                       </div>
                     </ion-modal>
-                  <ion-button class="btnprimary sm" @click="btnConClick()" mode="ios">
+                  <ion-button class="btnprimary sm" @click="btnConClick" mode="ios">
                     <span class="svgicon"></span> Connect
                   </ion-button>
                 </div>
             </div>
         </div>
       </div>
-    </ion-page>  
+    </ion-page>
   </template>
   
   <script>
   import { useRouter } from 'vue-router';
-  import eventBus  from '../assets/script/eventBus';
+import eventBus from '../assets/script/eventBus';
   
   export default {
     name: "ConnectionType",
@@ -72,3 +73,4 @@
     },
   }
   </script>
+  

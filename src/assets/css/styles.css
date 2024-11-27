@@ -1,3 +1,33 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+
+
 :root{
   --black:#000000;
   --white:#ffffff;
@@ -16,22 +46,22 @@
 
 @font-face {
   font-family: 'Anek Devanagari';
-  src: url('../fonts/AnekDevanagari-Regular.eot');
-  src: url('../fonts/AnekDevanagari-Regular.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/AnekDevanagari-Regular.woff2') format('woff2'),
-      url('../fonts/AnekDevanagari-Regular.woff') format('woff'),
-      url('../fonts/AnekDevanagari-Regular.ttf') format('truetype');
+  src: url('./../fonts/AnekDevanagari-Regular.eot');
+  src: url('./../fonts/AnekDevanagari-Regular.eot?#iefix') format('embedded-opentype'),
+      url('./../fonts/AnekDevanagari-Regular.woff2') format('woff2'),
+      url('./../fonts/AnekDevanagari-Regular.woff') format('woff'),
+      url('./../fonts/AnekDevanagari-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Anek Devanagari';
-  src: url('../fonts/AnekDevanagari-Medium.eot');
-  src: url('../fonts/AnekDevanagari-Medium.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/AnekDevanagari-Medium.woff2') format('woff2'),
-      url('../fonts/AnekDevanagari-Medium.woff') format('woff'),
-      url('../fonts/AnekDevanagari-Medium.ttf') format('truetype');
+  src: url('./../fonts/AnekDevanagari-Medium.eot');
+  src: url('./../fonts/AnekDevanagari-Medium.eot?#iefix') format('embedded-opentype'),
+      url('./../fonts/AnekDevanagari-Medium.woff2') format('woff2'),
+      url('./../fonts/AnekDevanagari-Medium.woff') format('woff'),
+      url('./../fonts/AnekDevanagari-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -56,6 +86,8 @@ p{color: var(--paragraphcolor);}
 .svgicon svg{ width: 16px;height: 16px; fill: #fff;margin-right: 5px;}
 .svgicon.dark svg{fill: var(--black);}
 .svgicon.md svg{ width: 13px;height: 13px; }
+.svgicon.xl svg{ width: 80px;height: 80px; }
+.fileicon{ text-align: center; opacity: 0.3; padding: 25px 0;}
 .label{font-size: 16px;color: var(--labelcolor);}
 .tablewrap{
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
@@ -83,11 +115,7 @@ body{
   background: linear-gradient(180deg, rgba(238,247,255,1) 0%, rgba(177,216,251,1) 100%);
   --background: rgb(238,247,255);
   --background: linear-gradient(180deg, rgba(238,247,255,1) 0%, rgba(177,216,251,1) 100%);
-  overflow: hidden;
-  --padding-top: 15px;
-  --padding-bottom: 15px;
-  --padding-start: 15px;
-  --padding-end: 15px;  
+  overflow: hidden;  
   /* background-image:url(../images/app_bg.png) ;
   background-repeat: no-repeat;
   background-size: cover;
@@ -100,7 +128,9 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 15px;
 }
+
 
 .heading{ margin-left: 5px;font-size:var(--size30);margin-bottom: 20px; margin-top: 0;color: var(--headingcolor);font-weight: normal; line-height: 32px;}
 .heading.mb-0{margin-bottom: 0;}
@@ -125,7 +155,7 @@ ion-progress-bar::part(progress){background-color: var(--themecolor);}
 
 .card{box-shadow:0px 1px 4px 0px rgba(0,0,0,0.25);background: #ffffff;padding:15px;border-radius: 12px;max-width: 767px; width: 100%;margin: 0 auto;margin-bottom: 20px;}
 .card.auto{ width: auto;}
-.cardtitle{font-size: 22px;color:#333647;font-weight: 500; margin-bottom: 0;line-height: 24px;}
+.cardtitle{font-size: 22px;color:#333647;font-weight: 600; margin-bottom: 0;line-height: 24px;}
 .subtitle {font-size: 15px;font-weight: 500;border: 1px solid var(--headingcolor);display: inline-block;border-radius: 5px;padding: 5px 10px 0px;margin-bottom: 0;line-height: 18px;min-width: 50px;
   text-align: center;}
 .card.center{text-align: center;}
@@ -134,6 +164,7 @@ ion-progress-bar::part(progress){background-color: var(--themecolor);}
 .card h3.card-title{ font-size: var(--size18);}
 .card.about p{font-size: var(--size16); text-align: center; line-height: 24px;margin-top: 0;margin-bottom: 10px;}
 .flex-box{ display: flex;margin-top: 15px;}
+
 .space-between{ justify-content: space-between;}
 .align-center{ align-items:center;}
 .justify-center{justify-content: center;}
@@ -164,6 +195,11 @@ ion-button.lg::part(native), ion-button.md::part(native), ion-button.full::part(
 ion-button.sm{
   width: auto;
 }
+.main-content{
+  background: linear-gradient(180deg, rgba(238,247,255,1) 0%, rgba(177,216,251,1) 100%);
+  --background: rgb(238,247,255);
+  --background: linear-gradient(180deg, rgba(238,247,255,1) 0%, rgba(177,216,251,1) 100%);
+}
 .btnprimary::part(native){
   background: rgb(114,180,237);
 background: linear-gradient(180deg, rgba(114,180,237,1) 0%, rgba(14,98,171,1) 100%);
@@ -192,8 +228,12 @@ background: linear-gradient(180deg, rgba(114,180,237,1) 0%, rgba(14,98,171,1) 10
   letter-spacing: 0.5px;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
 }
+.btnsuccess::part(native){
+  background-color: #67A308;
+}
 
-.setBtn .btnerror::part(native), .setBtn .btnprimary{min-width:100px; height: 30px; width: auto;}
+.setBtn .btnerror::part(native), .setBtn .btnprimary{min-width:90px; height: 30px; width: auto;}
+.setBtn ion-button::part(native){font-size: 18px;}
 .setBtn .btnerror::part(native), .setBtn .btnprimary::part(native){background:#0e62ab; padding: 5px;border-radius: 20px;}
 .setBtn .btnerror span, .setBtn .btnprimary span{padding-top: 3px;}
 .setBtn .btnerror::part(native){background: rgba(248,67,67,1)}
@@ -279,7 +319,7 @@ ion-input label input.native-input.sc-ion-input-ios{font-size: 22px;}
 .input-icon svg{ width: 19px; height: 19px; fill: var(--paragraphcolor);}
 ion-input label .label-text-wrapper{font-size: 20px;height: 20px;}
 ion-input label .native-wrapper{ height: 30px; padding-top: 4px;}
-ion-input label .native-wrapper input.native-input{padding-left: 23px;}
+form.login ion-input label .native-wrapper input.native-input{padding-left: 23px;}
 
 .customselect{margin-bottom: 10px;}
 ion-select{--placeholder-color:var(--black);--placeholder-opacity:0.8;border-bottom: 1px solid var(--paragraphcolor);--highlight-color: rgba(14,98,171,1);}
@@ -287,6 +327,7 @@ ion-select::part(label) {font-size: 20px;color:var(--labelcolor);height: 25px;}
 ion-select::part(container){display: block;text-align: left; font-size: 22px; --placeholder-color: var(--paragraphcolor); color: var(--paragraphcolor);}
 
 .main-header{ background: #fff;box-shadow: none;}
+.main-header ion-toolbar{--background: rgb(237, 247, 255);background: rgb(237, 247, 255);}
 .main-header.lg ion-toolbar{--min-height: 95px;}
 .main-header ion-toolbar{--min-height:60px;--background-color:transparent; --background: rgb(228 241 254);background: rgb(226 239 253);}
 .main-header .toolbar-title-default:last-of-type{--border-width:0px !important; padding-top: 10px;padding-bottom: 10px;}
@@ -324,6 +365,9 @@ ion-title .connected-device em{ fill: #ffffff; }
 ion-footer ion-toolbar{--padding-top: 10px;--padding-start: 15px;--padding-end: 15px;--background:transparent; }
 ion-footer.footer-toolbar-padding ion-toolbar:last-of-type{ padding-bottom: 10px;}
 ion-footer.footer-toolbar-padding ion-toolbar:first-of-type{ --border-width: 0;background: rgba(177, 216, 251, 1);}
+.flex-footer{display: flex; gap: 20px;}
+.flex-footer ion-button{ line-height: 40px;white-space: nowrap;}
+.flex-footer ion-button::part(native){ --min-height: 35px;min-height: 35px; height: 40px;padding:10px 15px 5px;}
 
 .devicelist{background:transparent;}
 .devicelist ion-item{--background:transparent;--inner-border-width:0; margin-bottom: 10px;}
@@ -350,7 +394,7 @@ ion-label .device-icon.lg{left: 6px;top: 11px;}
 
 .alarmstatus{margin-bottom: 10px;}
 .alarmstatus span svg{ width: 16px;height: 16px;}
-.alarmstatus ion-label {padding: 3px 8px;border-radius: 5px;color: #fff;height: 25px;display: inline-block;font-size: 18px;font-weight: 500;}
+.alarmstatus ion-label {padding: 3px 8px;border-radius: 5px;color: #fff;height: 30px;display: inline-block;font-size: 18px;font-weight: 500;}
 .alarmstatus ion-label span{height: 20px; display: inline-block;}
 .alarmstatus ion-label svg{ fill: #fff;position: relative;top: 2px;}
 .alarmstatus .error{ background-color: #F84343;}
@@ -485,3 +529,6 @@ ion-modal#example-modal {
 ion-button.success::part(native){ background-color: var(--successbg);}
 ion-button.warning::part(native){ background-color: var(--warningbg);}
 ion-button.error::part(native){ background-color: var(--errorbg);}
+
+.notes p{ font-size: 18px;background: #fe9191;border-radius: 5px;display: inline-block;padding: 4px 30px 0px 12px;color: #fff;position: relative;font-weight: 500; margin-top: 0;}
+.notes p span{ position: absolute; right: 0; top: 5px;}

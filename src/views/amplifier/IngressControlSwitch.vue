@@ -1,4 +1,6 @@
 <template>  
+<ion-page>
+    <ion-content class="ion-padding main-content">
     <div class="card auto"> 
         <h5 class="cardtitle">Ingress Control Switch</h5>
         <h6 class="subtitle mt-10">Port 2</h6>
@@ -37,6 +39,8 @@
             </ion-radio-group>
         </div>            
     </div>
+</ion-content>
+</ion-page>
   </template>
   
   <script>

@@ -1,13 +1,13 @@
 <template>
     <ion-page>
-        <div class="wrapper">
+      <div class="wrapper">
             <div class="toparea">
                 <h3 class="heading mb-0">Login as Wi-Fi <span>User Login</span></h3>
                 <div class="networkinfo">
                     <p><span class="svgicon" v-html="$store.state.wifi"></span> <span> CADA-1TS1</span></p>
                 </div>
             </div>        
-            <div class="middlearea" style="height: calc(100vh - 165px);">
+            <div class="middlearea" style="height: calc(100vh - 162px);">
                 <div class="card center about">
                     <form action="" class="login">
                         <ion-row>
@@ -57,15 +57,14 @@
     methods: {
       btnLogin: function() {
         localStorage.setItem("isLogin", "suresh");
-        this.router.push("/dashboard");
+        this.$router.push("/amplifier/selectdevice");
         setTimeout(() => {
           window.location.reload();
         }, 300);
       },
-        btnBack: function() {
-            eventBus().emitter.emit("evtbtnback");
-        }
+      btnBack: function() {
+          eventBus().emitter.emit("evtbtnback");
+      }
     }
-    
   }
   </script>
