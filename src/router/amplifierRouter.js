@@ -26,7 +26,8 @@ import DownstreamLevelAdjustment from "../views/amplifier/DownstreamLevelAdjustm
 import UpstreamInputAttenuationSettingManual from "../views/amplifier/UpstreamInputAttenuationSettingManual.vue"
 import UpstreamLevelAdjustment from "../views/amplifier/UpstreamLevelAdjustment.vue";
 import GuidedAmplifierMode from "../views/amplifier/GuidedAmplifierMode.vue";
-
+import GuidedProfilesInfo from "../views/amplifier/GuidedProfilesInfo.vue";
+import DeviceInformation from "../views/amplifier/DeviceInformation.vue";
 
 
 const basePath = "/amplifier";
@@ -59,6 +60,8 @@ export default [
   { path: `${basePath}/upstreaminputattenuationsettingmanual`, name: "UpstreamInputAttenuationSettingManual", component: UpstreamInputAttenuationSettingManual },
   { path: `${basePath}/upstreamleveladjustment`, name: "UpstreamLevelAdjustment", component: UpstreamLevelAdjustment },
   { path: `${basePath}/guidedamplifiermode`, name: "GuidedAmplifierMode", component: GuidedAmplifierMode },
+  { path: `${basePath}/guidedprofilesinfo`, name: "GuidedProfilesInfo", component: GuidedProfilesInfo },
+  { path: `${basePath}/deviceinformation`, name: "DeviceInformation", component: DeviceInformation },
   
   
 ];

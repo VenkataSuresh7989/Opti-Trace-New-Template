@@ -3,14 +3,28 @@
     <ion-content class="ion-padding main-content">
         <div class="middlearea">
             <div class="card auto">
-                <h5 class="cardtitle center">Do you want to load a configuration file?</h5>
+                <h5 class="cardtitle center">Are you sure you want to set Amplifier in AGC mode?</h5>
                 <figure class="fileicon">
-                    <span class="svgicon xl" v-html="$store.state.configfile"> </span>
+                    <span class="svgicon xl" v-html="$store.state.exclamation"> </span>
                 </figure>
                 <div class="modalBtns flex-box space-between">
                     <ion-button class="sm success" mode="ios" >Yes</ion-button>
-                    <ion-button @click="navconfigVAC" class="sm error" mode="ios" >No</ion-button>
+                    <ion-button id="finish-guided" class="sm error" mode="ios" >No</ion-button>
                 </div>
+                <ion-modal id="example-modal" ref="modal" trigger="finish-guided">
+                    <div class="modalWrapper">
+                      <div class="modalIcontype success" style="line-height: 103px;">                          
+                          <span class="svgicon lg" v-html="$store.state.checkmark"></span>                          
+                      </div>
+                      <div class="modalInfo">
+                        <h5 class="successmsg">Successfully completed Guided Setup</h5>
+                        <p class="mt-0">Amplifier in <span>Manual Mode</span></p>
+                      </div>                        
+                      <div class="modalBtns flex-box justify-center">                        
+                        <ion-button class="sm success" mode="ios" @click="navmainmenu">Finish</ion-button>                        
+                      </div>
+                    </div>
+                  </ion-modal>
             </div> 
         </div>
     </ion-content>
@@ -18,8 +32,7 @@
   </template>
   
   <script>
-  import { useRouter } from "vue-router";     
-  import eventBus from '../../assets/script/eventBus';     
+  import { useRouter } from "vue-router";  
   export default {
     name: "GuidedAmplifierMode",   
     data(){
@@ -31,21 +44,14 @@
       return {       
         router,
       };
-    },    
-    mounted() {
-      eventBus().emitter.on("evtbackTrunkLevelDetailView",()=>{
-        this.$router.push("../amplifier/trunkleveldetailview");
-      });
     },
-    unmounted() {
-      eventBus().emitter.off("evtbackTrunkLevelDetailView");
-    },
-    methods:{
-        navconfigVAC: function(){
-            this.$router.push("../amplifier/guidedconfigurevacthresholds");
-        }
+    methods:{     
+      navmainmenu: function(){
+        this.$refs.modal.$el.dismiss();
+        this.$router.push("/amplifier/connectionestablished");
+      }
     }
-    
+
   };
   </script>
   

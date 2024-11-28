@@ -8,7 +8,7 @@
                     <span class="svgicon xl" v-html="$store.state.configfile"> </span>
                 </figure>
                 <div class="modalBtns flex-box space-between">
-                    <ion-button class="sm success" mode="ios" >Yes</ion-button>
+                    <ion-button @click="navguidedProfiles" class="sm success" mode="ios" >Yes</ion-button>
                     <ion-button @click="navconfigVAC" class="sm error" mode="ios" >No</ion-button>
                 </div>
             </div> 
@@ -43,7 +43,11 @@
     methods:{
         navconfigVAC: function(){
             this.$router.push("../amplifier/guidedconfigurevacthresholds");
+        },
+        navguidedProfiles: function(){
+          this.$router.push("../amplifier/guidedprofilesinfo");
         }
+
     }
     
   };

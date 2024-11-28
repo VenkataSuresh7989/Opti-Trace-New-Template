@@ -4,7 +4,7 @@
     <div class="middlearea">
      <div class="card">
         <ion-list class="devicelist menu" mode="ios">
-          <ion-item>
+          <ion-item @click="navdeviceinformation">
             <ion-label>
               <div>
                 <span class="device-icon md" v-html="$store.state.deviceinfo"></span>
@@ -60,6 +60,9 @@
       },
       navtestmode: function(){
         this.$router.push("../amplifier/testmode");
+      },
+      navdeviceinformation: function(){
+        this.$router.push("../amplifier/deviceinformation");
       }
     }
   };

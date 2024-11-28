@@ -9,7 +9,9 @@
         <div class="center">
             <span class="svgicon" v-html="$store.state.upload"></span>
             <p>Choose file to start uploading</p>
-            <ion-button size="small" class="btnprimary">Browse Files</ion-button>
+            <div class="setBtn center mb-15">
+              <ion-button size="small" class="btnprimary">Browse Files</ion-button>
+            </div>
         </div>
       </div>
       <p class="mt-10">Only support .dfu, .zip files</p>      

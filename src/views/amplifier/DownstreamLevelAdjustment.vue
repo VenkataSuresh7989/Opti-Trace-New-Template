@@ -1,7 +1,8 @@
 <template>
     <ion-page>
         <ion-content class="ion-padding main-content">
-        <div class="card auto">      
+        <h5 class="cardtitle mb-10">Adjust Downstream Levels</h5>
+        <div class="card auto">                  
             <h5 class="cardtitle center">Manual Mode Active</h5>
             <div class="checkboxgroup">                
                 <ion-checkbox  mode="md" checked><span>Manual</span></ion-checkbox>                 
@@ -43,7 +44,7 @@
             <h5 class="cardtitle center">Step Size</h5>
 
             <div style="margin: 15px 0;">
-                <ion-segment value="default" mode="ios" class="three">
+                <ion-segment value="coarse" mode="ios" class="three">
                     <ion-segment-button value="default" mode="ios">
                         <ion-label class="icon-label"><span class="svglabel">Fine</span> </ion-label>
                     </ion-segment-button>

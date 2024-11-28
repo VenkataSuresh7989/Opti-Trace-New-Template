@@ -18,7 +18,7 @@
               </ion-label>
             </ion-item>
 
-            <ion-item>
+            <ion-item @click="navcadamanagement">
               <ion-label class="smallicon">
                 <div>
                   <span class="device-icon" v-html="$store.state.microchip"></span>
@@ -54,6 +54,9 @@ export default {
     btnClick: function () {      
       this.$router.push("/amplifier/connectionestablished");
     },
+    navcadamanagement: function(){
+      this.$router.push("../cada/cadamenu");      
+    }
   },
 };
 </script>

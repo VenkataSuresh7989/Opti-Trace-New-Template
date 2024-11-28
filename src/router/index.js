@@ -1,12 +1,14 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import Login from '../components/LoginScreen.vue';
 import amplifierRouter from './amplifierRouter';
+import cadaRouter from './cadaRouter';
 import { genDateTimeID } from '../assets/script/common';
 
 const routes = [
   { path: '/', redirect: '/login' },
   { path: '/login', name: 'Login', component: Login },
-  ...amplifierRouter
+  ...amplifierRouter,
+  ...cadaRouter
 ];
 
 const router = createRouter({
