@@ -2,6 +2,7 @@ import SelectDevice from "../views/SelectDevice.vue";
 import ConnectionEstablished from "../views/ConnectionEstablished.vue";
 import MainMenu from "../views/amplifier/MainMenu.vue";
 import HealthStatus from "../views/amplifier/HealthStatus.vue"
+import ThresholdConfig from "../views/amplifier/ThresholdConfig.vue"
 import DeviceConfiguration from "../views/amplifier/DeviceConfiguration.vue"
 import DownstreamConfiguration from "../views/amplifier/DownstreamConfiguration.vue"
 import UpstreamConfiguration from "../views/amplifier/UpstreamConfiguration.vue"
@@ -37,6 +38,7 @@ export default [
   { path: `${basePath}/connectionestablished`, name: "ConnectionEstablished", component: ConnectionEstablished },
   { path: `${basePath}/mainmenu`, name: "MainMenu", component: MainMenu },
   { path: `${basePath}/healthstatus`, name: "HealthStatus", component: HealthStatus },
+  { path: `${basePath}/thresholdconfig`, name: "ThresholdConfig", component: ThresholdConfig },  
   { path: `${basePath}/deviceconfiguration`, name: "DeviceConfiguration", component: DeviceConfiguration },  
   { path: `${basePath}/downstreamconfiguration`, name: "DownstreamConfiguration", component: DownstreamConfiguration },  
   { path: `${basePath}/upstreamconfiguration`, name: "UpstreamConfiguration", component: UpstreamConfiguration },    

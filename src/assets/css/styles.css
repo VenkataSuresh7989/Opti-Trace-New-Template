@@ -311,11 +311,13 @@ ion-input label input.native-input.sc-ion-input-ios{font-size: 22px;}
 .custominput.addnav ion-button::part(native){padding: 0;}
 .custominput.addnav ion-button span svg{width: 18px; height: 18px;}
 .custominput.addnav .statusicon{position: absolute;left: 0;top: 50%;margin-top: -15px;}
-.statusicon.success svg{fill: #67A308;}
+.statusicon.success svg{fill: var(--successbg);}
 .statusicon.error svg{fill: #F84343;}
+.statusicon.warning svg{ fill: var(--warningbg); }
 
 .custominput .input-icon {position: absolute;left: 0;bottom: 10px;width: 19px;height: 19px;}
 .custominput.noicon ion-input input{padding-left: 0 !important;}
+.custominput.noicon ion-input input[type=readonly]{--border-width:0px;}
 .input-icon svg{ width: 19px; height: 19px; fill: var(--paragraphcolor);}
 ion-input label .label-text-wrapper{font-size: 20px;height: 20px;}
 ion-input label .native-wrapper{ height: 30px; padding-top: 4px;}

@@ -1,9 +1,8 @@
-### Base component:
 <template>  
      <ion-page>
       <ion-content class="ion-padding main-content">
       <div class="alarmstatus">
-        <ion-label class="error"><span v-html="$store.state.checkcircle"></span> <span>Status</span></ion-label>
+        <ion-label class="error"><span v-html="$store.state.closecircle"></span> <span>Status</span></ion-label>
       </div>
       <div class="card">        
         <ion-list mode="ios" class="alarms">
@@ -17,7 +16,7 @@
                     </ion-input> 
                   </div>                  
                   <span class="statusicon success" v-html="$store.state.checkcircle"></span>
-                  <ion-button class="iconbtn"> <span v-html="$store.state.angleright"> </span> </ion-button>
+                  <ion-button class="iconbtn" @click="navthresholdconfig"> <span v-html="$store.state.angleright"> </span> </ion-button>
                 </div>
               </ion-col>
               <ion-col size="3" size-sm="1" class="center">
@@ -145,5 +144,13 @@ export default {
       router,
     };
   },
+  methods:{
+    navthresholdconfig: function(){
+      this.$router.push("/amplifier/thresholdconfig");
+    },
+    navDeviceconfig: function(){
+      this.$router.push("../amplifier/deviceconfiguration");     
+    },
+  }
 }
 </script>
